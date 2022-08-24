@@ -4,6 +4,7 @@
   "affected": {
     "defaultBase": "main"
   },
+  "plugins": ["@nxlv/python"],
   "implicitDependencies": {
     "package.json": {
       "dependencies": "*",
