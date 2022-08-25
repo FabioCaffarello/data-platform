@@ -32,3 +32,6 @@ add-python-project:
 		--packageName=$(packageName) \
 		--moduleName=$(moduleName) \
 		--publishable=$(publishable)
+
+lint:
+	npx nx affected:lint

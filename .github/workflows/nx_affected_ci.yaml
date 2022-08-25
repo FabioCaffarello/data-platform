@@ -1,0 +1,51 @@
+name: Nx Affected CI
+
+on:
+  pull_request:
+    types:
+      - assigned
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.12
+      - run: git fetch origin main
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-in-project: true
+      - name: Load Cached Venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: venv-${% raw %}{{ hashFiles('**/poetry.lock') }}{% endraw %}
+      - name: Poetry Install Dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - name: Run Affected Lint
+        shell: bash
+        run: make lint
