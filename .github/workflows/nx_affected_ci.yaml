@@ -40,8 +40,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: .venv
-          key: venv-${% raw %}{{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}{% endraw %}
-
+          key: venv-${% raw %}{{ hashFiles('**/poetry.lock') }}{% endraw %}
 
       - name: Poetry Install Dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
