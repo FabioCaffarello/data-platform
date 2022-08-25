@@ -2,8 +2,6 @@
 
 ## About
 
-Project description here.
-
-[API Documentation](docs/source/api.md)
+Shared Unit Test and Development
 
 ## [Change log](CHANGELOG.md)

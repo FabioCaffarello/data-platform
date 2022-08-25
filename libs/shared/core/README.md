@@ -2,8 +2,6 @@
 
 ## About
 
-Project description here.
-
-[API Documentation](docs/source/api.md)
+Shared Core.
 
 ## [Change log](CHANGELOG.md)
