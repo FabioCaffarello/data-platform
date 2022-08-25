@@ -1,4 +1,4 @@
-root_dir?=`pwd`
+rootDir?=`pwd`
 
 add-project-dependency-local:
 	npx nx run $(project):add --name $(projectName) --local
@@ -16,7 +16,7 @@ add-project-dependency-version:
 	npx nx run $(project):add --name $(dependency)==$(version)
 
 run-python-script:
-	poetry run python $(root_dir)/$(path)
+	poetry run python $(rootDir)/$(path)
 
 update-poetry:
 	poetry update
