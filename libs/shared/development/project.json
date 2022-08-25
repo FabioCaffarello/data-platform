@@ -1,0 +1,81 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/shared/development/shared_development",
+  "targets": {
+    "docs": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "pydoc-markdown -p shared_development --render-toc > docs/source/api.md",
+        "cwd": "libs/shared/development"
+      }
+    },
+    "lock": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "poetry lock --no-update",
+        "cwd": "libs/shared/development"
+      }
+    },
+    "add": {
+      "executor": "@nxlv/python:add",
+      "options": {}
+    },
+    "update": {
+      "executor": "@nxlv/python:update",
+      "options": {}
+    },
+    "remove": {
+      "executor": "@nxlv/python:remove",
+      "options": {}
+    },
+    "build": {
+      "executor": "@nxlv/python:build",
+      "outputs": ["libs/shared/development/dist"],
+      "options": {
+        "outputPath": "libs/shared/development/dist",
+        "publish": false
+      }
+    },
+    "install": {
+      "executor": "@nxlv/python:install",
+      "options": {
+        "silent": false,
+        "args": "",
+        "cacheDir": ".cache/pypoetry",
+        "verbose": false,
+        "debug": false
+      }
+    },
+    "lint": {
+      "executor": "@nxlv/python:flake8",
+      "outputs": ["reports/libs/shared/development/pylint.txt"],
+      "options": {
+        "outputFile": "reports/libs/shared/development/pylint.txt"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [
+        "reports/libs/shared/development/unittests",
+        "coverage/libs/shared/development"
+      ],
+      "options": {
+        "command": "poetry run pytest tests/",
+        "cwd": "libs/shared/development"
+      }
+    },
+    "tox": {
+      "executor": "@nxlv/python:tox",
+      "outputs": [
+        "reports/libs/shared/development/unittests",
+        "coverage/libs/shared/development"
+      ],
+      "options": {
+        "silent": false,
+        "args": ""
+      }
+    }
+  },
+  "tags": []
+}

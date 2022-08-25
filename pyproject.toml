@@ -2,13 +2,20 @@
 name = "data-platform"
 version = "1.0.0"
 description = "Data Platform with Monorepo Approach"
-authors = ["FabioCaffarello <fabio.caffarello@gmail.com>"]
+authors = [ "FabioCaffarello <fabio.caffarello@gmail.com>" ]
 readme = "README.md"
 
-[tool.poetry.dependencies]
-python = ">=3.8,<3.10"
+  [tool.poetry.dependencies]
+  python = ">=3.8,<3.10"
 
+    [tool.poetry.dependencies.shared-core]
+    path = "libs/shared/core"
+    develop = true
+
+    [tool.poetry.group.dev.dependencies.shared-development]
+    path = "libs/shared/development"
+    develop = true
 
 [build-system]
-requires = ["poetry-core"]
+requires = [ "poetry-core==1.1.0b3" ]
 build-backend = "poetry.core.masonry.api"

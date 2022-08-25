@@ -438,22 +438,6 @@ botocore = ">=1.12.36,<2.0a.0"
 crt = ["botocore[crt] (>=1.20.29,<2.0a.0)"]
 
 [[package]]
-name = "shared-core"
-version = "1.0.0"
-description = "Shared Core"
-category = "main"
-optional = false
-  python-versions = ">=3.8,<3.10"
-develop = true
-
-[package.dependencies]
-python-json-logger = "^2.0.2"
-
-[package.source]
-type = "directory"
-url = "libs/shared/core"
-
-[[package]]
 name = "shared-development"
 version = "1.0.0"
 description = "Shared Unit Test and Development"
@@ -485,7 +469,7 @@ wrangler = ["awswrangler (==2.16.0)"]
 
 [package.source]
 type = "directory"
-url = "libs/shared/development"
+url = "../development"
 
 [[package]]
 name = "six"
@@ -556,7 +540,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
   python-versions = ">=3.8,<3.10"
-content-hash = "eb53a608cb0ba4f8b63257b2fe54d5930648775b51fc9a520113e0e342f5a6ed"
+content-hash = "f1c74487398cc179dd0f9798d4bef7de7270ac625e8a5a718257b08e69b8efe7"
 
 [metadata.files]
 aspy-refactor-imports = [
@@ -757,7 +741,6 @@ s3transfer = [
     {file = "s3transfer-0.6.0-py3-none-any.whl", hash = "sha256:06176b74f3a15f61f1b4f25a1fc29a4429040b7647133a463da8fa5bd28d5ecd"},
     {file = "s3transfer-0.6.0.tar.gz", hash = "sha256:2ed07d3866f523cc561bf4a00fc5535827981b117dd7876f036b0c1aca42c947"},
 ]
-shared-core = []
 shared-development = []
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
