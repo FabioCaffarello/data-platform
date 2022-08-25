@@ -4,7 +4,6 @@ version = "1.0.0"
 description = "Data Platform with Monorepo Approach"
 authors = ["FabioCaffarello <fabio.caffarello@gmail.com>"]
 readme = "README.md"
-packages = [{include = "data_platform"}]
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.10"
