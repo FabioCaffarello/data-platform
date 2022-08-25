@@ -20,20 +20,22 @@ jobs:
         node-version: [12.x]
 
     steps:
+
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
+
       - run: git fetch origin main
+
       - name: Install Poetry
-        uses: snok/install-poetry@v1
+        uses: Gr1N/setup-poetry@v7
         with:
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-          installer-parallel: true
+          poetry-version: 1.2.0b3
 
       - name: Load cached venv
         id: cached-poetry-dependencies
@@ -45,10 +47,12 @@ jobs:
       - name: Poetry Install Dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       - run: npm install
       - name: Run Affected Lint
         shell: bash
