@@ -30,4 +30,5 @@ add-python-project:
 		--description=$(description) \
 		--directory=$(directory) \
 		--packageName=$(packageName) \
+		--moduleName=$(moduleName) \
 		--publishable=$(publishable)
