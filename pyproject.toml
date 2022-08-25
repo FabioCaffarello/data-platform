@@ -15,6 +15,7 @@ readme = "README.md"
     [tool.poetry.group.dev.dependencies.shared-development]
     path = "libs/shared/development"
     develop = true
+    extras = [ "wrangler" ]
 
 [build-system]
 requires = [ "poetry-core==1.1.0b3" ]
