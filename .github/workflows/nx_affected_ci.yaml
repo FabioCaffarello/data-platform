@@ -45,11 +45,7 @@ jobs:
 
       - name: Poetry Install Dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --no-interaction --no-root
-
-      - name: Install library
-        run: poetry install --no-interaction
-
+        run: poetry install
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
