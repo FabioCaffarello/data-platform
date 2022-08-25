@@ -1,1 +1,1 @@
-"""Shared Core"""
+"""Shared Core."""
