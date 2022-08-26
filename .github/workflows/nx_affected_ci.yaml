@@ -48,12 +48,15 @@ jobs:
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+      - name: Echo Temp
+        run: echo $(System.DefaultWorkingDirectory)
 
-      - run: npm install
-      - name: Run Affected Lint
-        shell: bash
-        run: make lint
+      # - name: Use Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+
+      # - run: npm install
+      # - name: Run Affected Lint
+      #   shell: bash
+      #   run: make lint
