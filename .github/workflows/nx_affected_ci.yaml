@@ -48,11 +48,19 @@ jobs:
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install
 
-      - name: Deploy Doc
-        run: poetry run mkdocs gh-deploy
-
       - uses: nrwl/nx-set-shas@v2
       - run: npm ci
       - run: |
           source ./.venv/bin/activate
           npx nx affected --target=lint --parallel=3
+
+      - name: Build and Commit
+        uses: iSOLveIT/mkdocs-notes@main
+        with:
+          config_file_path: mkdocs.yml
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: site
