@@ -55,4 +55,6 @@ jobs:
           npx nx affected --target=lint --parallel=3
 
       - name: Deploy Doc
-        run: poetry run mkdocs gh-deploy
+        run: |
+          source ./.venv/bin/activate
+          mkdocs gh-deploy
