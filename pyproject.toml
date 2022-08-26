@@ -12,8 +12,9 @@ readme = "README.md"
     path = "libs/shared/core"
     develop = true
 
-    [tool.poetry.group.dev.dependencies]
-    pre-commit = "^2.20.0"
+  [tool.poetry.group.dev.dependencies]
+  pre-commit = "^2.20.0"
+
     [tool.poetry.group.dev.dependencies.shared-development]
     path = "libs/shared/development"
     develop = true

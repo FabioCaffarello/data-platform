@@ -53,9 +53,3 @@ jobs:
       - run: |
           source ./.venv/bin/activate
           npx nx affected --target=lint --parallel=3
-
-
-      # - name: Use Node.js ${{ matrix.node-version }}
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: ${{ matrix.node-version }}
