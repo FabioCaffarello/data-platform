@@ -1,7 +1,10 @@
 site_name: Data Platform
 
+repo_url: https://github.com/FabioCaffarello/data-platform
+edit_uri: src/develop/docs/
+
 theme:
-  name: 'material'
+  name: 'mkdocs'
   icon:
     repo: fontawesome/brands/bitbucket
   font:
