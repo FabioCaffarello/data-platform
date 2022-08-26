@@ -1,2 +1,0 @@
-python-json-logger==2.0.4 ; python_version >= "3.8" and python_version < "3.10"
-shared-core @ file:///C:/FLC-Data/data-platform/libs/shared/core ; python_version >= "3.8" and python_version < "3.10"

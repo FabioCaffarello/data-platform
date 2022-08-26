@@ -48,13 +48,11 @@ jobs:
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install
 
+      - name: Deploy Doc
+        run: poetry run mkdocs gh-deploy
+
       - uses: nrwl/nx-set-shas@v2
       - run: npm ci
       - run: |
           source ./.venv/bin/activate
           npx nx affected --target=lint --parallel=3
-
-      - name: Deploy Doc
-        run: |
-          source ./.venv/bin/activate
-          mkdocs gh-deploy
