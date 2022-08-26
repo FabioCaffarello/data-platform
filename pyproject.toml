@@ -32,6 +32,7 @@ readme = "README.md"
   mkdocs-include-markdown-plugin = "3.5.2"
   mkdocs-swagger-ui-tag = "0.3.2"
   plantuml-markdown = "^3.6.2"
+  pyment = "^0.3.3"
 
 [build-system]
 requires = [ "poetry-core==1.1.0b3" ]
