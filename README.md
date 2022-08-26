@@ -6,7 +6,7 @@ Nx Monorepo for data platform solutions.
 
 - This project was generated using [Nx](https://nx.dev).
 
-## [Getting Started]()
+## [Getting Started](docs/index.md)
 
 
 ### Applications
