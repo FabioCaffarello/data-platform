@@ -55,4 +55,4 @@ jobs:
           npx nx affected --target=lint --parallel=3
 
       - name: Deploy Doc
-        run: mkdocs gh-deploy
+        run: git pull mkdocs gh-deploy
