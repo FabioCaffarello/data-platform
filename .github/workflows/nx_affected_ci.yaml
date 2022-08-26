@@ -48,8 +48,28 @@ jobs:
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install
 
-      - name: Echo Temp
-        run: echo $(System.DefaultWorkingDirectory)
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build (Nx Affected)
+        uses: mansagroup/nrwl-nx-action@v2
+        with:
+          targets: build
+          affected: true
+          nxCloud: false
+
+      - name: Lint (Nx Affected)
+        uses: mansagroup/nrwl-nx-action@v2
+        with:
+          targets: lint
+          affected: true
+          nxCloud: false
 
       # - name: Use Node.js ${{ matrix.node-version }}
       #   uses: actions/setup-node@v1
