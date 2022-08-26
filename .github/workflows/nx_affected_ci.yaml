@@ -50,7 +50,9 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v2
       - run: npm ci
-      - run: npx nx affected --target=lint --parallel=3
+      - run: |
+          source ./.venv/bin/activate
+          npx nx affected --target=lint --parallel=3
 
 
       # - name: Use Node.js ${{ matrix.node-version }}
