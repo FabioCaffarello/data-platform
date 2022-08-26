@@ -1,6 +1,6 @@
 # Getting Started
 
-This repository is a monorepo for CDK infra projects.
+This repository is a monorepo for data platform solution.
 
 ## Requirements
 
