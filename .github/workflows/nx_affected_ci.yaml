@@ -54,15 +54,5 @@ jobs:
           source ./.venv/bin/activate
           npx nx affected --target=lint --parallel=3
 
-      - name: Poetry Install Doc
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --only docs
-
-      - name: Deploy docs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_DOMAIN: dataplatform.com
-          CONFIG_FILE: ./mkdocs.yml
-          EXTRA_PACKAGES: build-base
+      - name: Deploy Doc
+        run: mkdocs gh-deploy
