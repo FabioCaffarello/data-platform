@@ -59,4 +59,4 @@ jobs:
 
       - run: |
           npx nx graph --file=docs/dependency-graph/index.html
-          mkdocs gh-deploy
+          poetry run mkdocs gh-deploy
