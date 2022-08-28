@@ -46,7 +46,10 @@ jobs:
 
       - name: Poetry Install Dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --with docs --no-interaction
+        run: poetry install --without docs
+
+      - name: Poetry Install Docs Dependencies
+        run: poetry install --only docs
 
       - uses: nrwl/nx-set-shas@v2
       - run: npm ci
@@ -56,4 +59,4 @@ jobs:
 
       - run: |
           npx nx graph --file=docs/dependency-graph/index.html
-          mkdocs gh-deploy
+          poetry run mkdocs gh-deploy
