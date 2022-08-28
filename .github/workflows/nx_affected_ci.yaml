@@ -30,7 +30,7 @@ jobs:
         with:
           python-version: 3.8
 
-      - run: git fetch origin main
+      - run: git fetch origin develop
 
       - name: Install Poetry
         uses: Gr1N/setup-poetry@v7
@@ -57,14 +57,3 @@ jobs:
       - run: |
           npx nx graph --file=docs/dependency-graph/index.html
           mkdocs gh-deploy
-
-      # - name: Build and Commit
-      #   uses: iSOLveIT/mkdocs-notes@main
-      #   with:
-      #     config_file_path: mkdocs.yml
-
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     branch: site
