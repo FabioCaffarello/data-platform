@@ -2,7 +2,7 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "data-platform",
   "affected": {
-    "defaultBase": "main"
+    "defaultBase": "origin/develop"
   },
   "plugins": ["@nxlv/python"],
   "implicitDependencies": {

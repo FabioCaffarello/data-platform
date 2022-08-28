@@ -1,5 +1,6 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+docs/dependency-graph/*
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
