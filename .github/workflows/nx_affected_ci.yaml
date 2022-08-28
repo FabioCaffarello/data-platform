@@ -46,7 +46,7 @@ jobs:
 
       - name: Poetry Install Dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --with docs
+        run: poetry install --with docs --no-interaction
 
       - uses: nrwl/nx-set-shas@v2
       - run: npm ci
