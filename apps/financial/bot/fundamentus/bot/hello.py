@@ -1,3 +1,5 @@
+"""Hello module."""
+
 
 def hello():
     """Hello."""
