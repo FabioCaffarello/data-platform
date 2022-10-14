@@ -5,6 +5,8 @@ repos:
       - id: check-toml
       - id: check-json
       - id: check-yaml
+      - id: no-commit-to-branch
+        args: [--branch, main, --branch, develop]
   - repo: https://gitlab.com/pycqa/flake8
     rev: "3.9.2"
     hooks:
