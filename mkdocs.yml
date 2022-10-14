@@ -4,7 +4,7 @@ repo_url: https://github.com/FabioCaffarello/data-platform
 edit_uri: src/develop/docs/
 
 theme:
-  name: 'mkdocs'
+  name: 'material'
   icon:
     repo: fontawesome/brands/bitbucket
   font:
