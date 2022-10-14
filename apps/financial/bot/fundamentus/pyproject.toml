@@ -1,0 +1,36 @@
+[tool.coverage.run]
+branch = true
+source = [ "bot" ]
+
+[tool.coverage.report]
+exclude_lines = [ "if TYPE_CHECKING:" ]
+show_missing = true
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-fail-under=100 --cov-report html:'../../../../coverage/apps/financial/bot/fundamentus/html' --cov-report xml:'../../../../coverage/apps/financial/bot/fundamentus/coverage.xml' --junitxml='../../../../reports/apps/financial/bot/fundamentus/unittests/junit.xml' --html='../../../../reports/apps/financial/bot/fundamentus/unittests/html/index.html'"
+
+[tool.poetry]
+name = "bot-fundamentus"
+version = "1.0.0"
+description = "Bot for crawler fundamentus data"
+authors = [ ]
+license = "Proprietary"
+readme = "README.md"
+
+  [[tool.poetry.packages]]
+  include = "bot"
+
+  [tool.poetry.dependencies]
+  python = ">=3.8,<3.10"
+
+[tool.poetry.group.dev.dependencies.shared-core]
+path = "../../../../libs/shared/core"
+develop = true
+
+[tool.poetry.group.dev.dependencies.shared-development]
+path = "../../../../libs/shared/development"
+develop = true
+
+[build-system]
+requires = [ "poetry-core==1.0.3" ]
+build-backend = "poetry.core.masonry.api"

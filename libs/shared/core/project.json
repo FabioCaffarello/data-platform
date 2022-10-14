@@ -1,12 +1,12 @@
 {
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/shared/core/shared_core",
+  "sourceRoot": "libs/shared/core/core",
   "targets": {
     "docs": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "pydoc-markdown -p shared_core --render-toc > docs/source/api.md",
+        "command": "pydoc-markdown -p core --render-toc > docs/source/api.md",
         "cwd": "libs/shared/core"
       }
     },
