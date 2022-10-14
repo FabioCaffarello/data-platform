@@ -1,11 +1,11 @@
-"""shared_core.logging tests."""
+"""core.logging tests."""
 
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     import pytest
 
-from shared_core import logging
+from core import logging
 
 
 def test_setup_logging_info(capsys: "pytest.CaptureFixture"):
