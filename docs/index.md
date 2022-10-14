@@ -25,6 +25,10 @@ npm install
 poetry install
 ```
 
+```shell
+poetry run pre-commit install
+```
+
 ## Terminal virtual environment
 
 ```shell
@@ -53,6 +57,18 @@ Example:
 
 ```shell
 npx nx run core:add --name requests=2.27.1
+```
+
+## Add new local dependency
+
+```shell
+npx nx run <appName>:add --name <dependencyName> --local
+```
+
+Example:
+
+```shell
+npx nx run core:add --name development --local
 ```
 
 Using the Nx wrapper to adding a dependency ensure that both root `poetry.lock` and project `poetry.lock` are updated.

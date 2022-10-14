@@ -1,0 +1,16 @@
+{
+  "name": "shared-core",
+  "description": "Shared core",
+  "version": "1.0.0",
+  "scripts": {
+    "generate-model-dev": "npm run generate-openapi-env-dev && node ../../codegen/generateOpenAPIModel.js",
+    "generate-model-prod": "npm run generate-openapi-env-dev && node ../../codegen/generateOpenAPIModel.js",
+    "generate-openapi-env-dev": "node ../../docs/openapi/env.js --input docs/openapi/openapi.yml --config docs/openapi/config/dev.json --output docs/openapi/openapi.env.yml",
+    "generate-openapi-env-prod": "node ../../docs/openapi/env.js --input docs/openapi/openapi.yml --config docs/openapi/config/prod.json --output docs/openapi/openapi.env.yml",
+    "generate-openapi-code-samples": "npx --yes snippet-enricher-cli@0.0.8 --input=docs/openapi/openapi.env.yml > docs/openapi/openapi-with-examples.json",
+    "generate-openapi-html": "npx --yes redoc-cli@0.13.16 build docs/openapi/openapi-with-examples.json --output docs/openapi/openapi.html",
+    "generate-openapi-docs-dev": "npm run generate-openapi-env-dev && npm run generate-openapi-code-samples && npm run generate-openapi-html",
+    "generate-openapi-docs-prod": "npm run generate-openapi-env-prod && npm run generate-openapi-code-samples && npm run generate-openapi-html"
+  },
+  "dependencies": {}
+}
