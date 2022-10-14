@@ -1,7 +1,7 @@
 [tool.coverage.run]
 branch = true
-source = [ "shared_development" ]
-omit = ["shared_development/hooks/report.py"]
+source = [ "development" ]
+omit = ["development/hooks/report.py"]
 
 [tool.coverage.report]
 exclude_lines = ['if TYPE_CHECKING:']
@@ -20,7 +20,7 @@ license = 'Proprietary'
 readme = 'README.md'
 
   [[tool.poetry.packages]]
-  include = "shared_development"
+  include = "development"
 
   [tool.poetry.dependencies]
   python = ">=3.8,<3.10"
