@@ -15,6 +15,10 @@ for project_name, project_path in workspace["projects"].items():
     with open(os.path.join(project_path, "project.json"), "r") as project_file:
         project = json.loads(project_file.read())
         custom_patterns = [
+            # OpenAPI Specs
+            (f"{project_path}/docs/openapi/*.json", False),
+            (f"{project_path}/docs/openapi/*.yml", False),
+
             # Markdowns
             (f"{project_path}/*.md", True),
 
