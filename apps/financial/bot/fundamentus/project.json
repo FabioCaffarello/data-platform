@@ -1,20 +1,20 @@
 {
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "library",
-  "sourceRoot": "libs/shared/development/development",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/financial/bot/fundamentus/bot",
   "targets": {
     "docs": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "pydoc-markdown -p development --render-toc > docs/source/api.md",
-        "cwd": "libs/shared/development"
+        "command": "pydoc-markdown -p bot --render-toc > docs/source/api.md",
+        "cwd": "apps/financial/bot/fundamentus"
       }
     },
     "lock": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "command": "poetry lock --no-update",
-        "cwd": "libs/shared/development"
+        "cwd": "apps/financial/bot/fundamentus"
       }
     },
     "add": {
@@ -31,10 +31,10 @@
     },
     "build": {
       "executor": "@nxlv/python:build",
-      "outputs": ["libs/shared/development/dist"],
+      "outputs": ["apps/financial/bot/fundamentus/dist"],
       "options": {
-        "outputPath": "libs/shared/development/dist",
-        "publish": false
+        "outputPath": "apps/financial/bot/fundamentus/dist",
+        "publish": true
       }
     },
     "install": {
@@ -49,27 +49,27 @@
     },
     "lint": {
       "executor": "@nxlv/python:flake8",
-      "outputs": ["reports/libs/shared/development/pylint.txt"],
+      "outputs": ["reports/apps/financial/bot/fundamentus/pylint.txt"],
       "options": {
-        "outputFile": "reports/libs/shared/development/pylint.txt"
+        "outputFile": "reports/apps/financial/bot/fundamentus/pylint.txt"
       }
     },
     "test": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [
-        "reports/libs/shared/development/unittests",
-        "coverage/libs/shared/development"
+        "reports/apps/financial/bot/fundamentus/unittests",
+        "coverage/apps/financial/bot/fundamentus"
       ],
       "options": {
         "command": "poetry run pytest tests/",
-        "cwd": "libs/shared/development"
+        "cwd": "apps/financial/bot/fundamentus"
       }
     },
     "tox": {
       "executor": "@nxlv/python:tox",
       "outputs": [
-        "reports/libs/shared/development/unittests",
-        "coverage/libs/shared/development"
+        "reports/apps/financial/bot/fundamentus/unittests",
+        "coverage/apps/financial/bot/fundamentus"
       ],
       "options": {
         "silent": false,

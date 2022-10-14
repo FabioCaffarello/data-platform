@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "financial-bot-fundamentus": "apps/financial/bot/fundamentus",
     "shared-core": "libs/shared/core",
     "shared-development": "libs/shared/development"
   }
