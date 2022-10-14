@@ -6,7 +6,7 @@ edit_uri: src/develop/docs/
 theme:
   name: 'material'
   icon:
-    repo: fontawesome/brands/bitbucket
+    repo: fontawesome/brands/github
   font:
     text: Roboto
   features:
