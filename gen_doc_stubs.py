@@ -22,6 +22,9 @@ for project_name, project_path in workspace["projects"].items():
             # Markdowns
             (f"{project_path}/*.md", True),
 
+            # API Config
+            (f"{project_path}/docs/source/*.md", True),
+
             # TypeScript Typedoc
             (f"{project_path}/typedoc/**/*.md", False),
 
