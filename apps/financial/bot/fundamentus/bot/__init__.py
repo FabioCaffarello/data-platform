@@ -1,1 +1,1 @@
-"""Bot for crawler fundamentus data"""
+"""Bot for crawler fundamentus data."""
