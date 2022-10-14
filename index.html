@@ -128,6 +128,10 @@
 <ul class="nav flex-column">
 </ul>
 </li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#add-new-local-dependency">Add new local dependency</a>
+<ul class="nav flex-column">
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -152,20 +156,28 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>poetry install
 </code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>poetry run pre-commit install
+</code></pre></div>
 <h2 id="terminal-virtual-environment">Terminal virtual environment<a class="headerlink" href="#terminal-virtual-environment" title="Permanent link"></a></h2>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>poetry shell
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>poetry shell
 </code></pre></div>
 <h2 id="run-flake8-linting">Run Flake8 Linting<a class="headerlink" href="#run-flake8-linting" title="Permanent link"></a></h2>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>npx nx affected:lint
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>npx nx affected:lint
 </code></pre></div>
 <p>or for a specific project</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>npx nx lint &lt;appName&gt;
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>npx nx lint &lt;appName&gt;
 </code></pre></div>
 <h2 id="add-new-dependency">Add new dependency<a class="headerlink" href="#add-new-dependency" title="Permanent link"></a></h2>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>npx nx run &lt;appName&gt;:add --name &lt;dependencyName&gt;<span class="o">==</span>&lt;dependencyVersion&gt;
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>npx nx run &lt;appName&gt;:add --name &lt;dependencyName&gt;<span class="o">==</span>&lt;dependencyVersion&gt;
 </code></pre></div>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>npx nx run core:add --name <span class="nv">requests</span><span class="o">=</span><span class="m">2</span>.27.1
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>npx nx run core:add --name <span class="nv">requests</span><span class="o">=</span><span class="m">2</span>.27.1
+</code></pre></div>
+<h2 id="add-new-local-dependency">Add new local dependency<a class="headerlink" href="#add-new-local-dependency" title="Permanent link"></a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>npx nx run &lt;appName&gt;:add --name &lt;dependencyName&gt; --local
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>npx nx run core:add --name development --local
 </code></pre></div>
 <p>Using the Nx wrapper to adding a dependency ensure that both root <code>poetry.lock</code> and project <code>poetry.lock</code> are updated.</p></div>
 </div>
@@ -253,5 +265,5 @@
 </html>
 <!--
 MkDocs version : 1.3.1
-Build Date UTC : 2022-10-14 03:18:19.169872+00:00
+Build Date UTC : 2022-10-14 21:15:51.225373+00:00
 -->
