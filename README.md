@@ -8,8 +8,13 @@ Nx Monorepo for data platform solutions.
 
 ## [Getting Started](docs/index.md)
 
+## [Full Documentation](https://fabiocaffarello.github.io/data-platform/)
 
 ### Applications
+
+#### Financial
+
+- [fundamentus](apps/financial/bot/fundamentus/README.md)
 
 ### Libraries
 
