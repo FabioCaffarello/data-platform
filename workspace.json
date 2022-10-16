@@ -2,8 +2,18 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "api": "apps/services/api/api",
+    "post": "apps/services/api/post",
+    "post-e2e": "apps/services/api/post-e2e",
     "financial-bot-fundamentus": "apps/financial/bot/fundamentus",
+    "api-data-access-article": "libs/api/api/data-access-article",
+    "api-data-access-dtos": "libs/api/api/data-access-dtos",
+    "api-feature-article": "libs/api/api/feature-article",
+    "api-feature-config": "libs/api/api/feature-config",
+    "api-utils-config": "libs/api/api/utils-config",
+    "article-data-access-api": "libs/api/articles/data-access-api",
     "shared-core": "libs/shared/core",
     "shared-development": "libs/shared/development"
+
   }
 }
