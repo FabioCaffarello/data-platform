@@ -7,7 +7,7 @@ exclude_lines = [ "if TYPE_CHECKING:" ]
 show_missing = true
 
 [tool.pytest.ini_options]
-addopts = "--cov --cov-fail-under=100 --cov-report html:'../../../../coverage/apps/financial/bot/fundamentus/html' --cov-report xml:'../../../../coverage/apps/financial/bot/fundamentus/coverage.xml' --junitxml='../../../../reports/apps/financial/bot/fundamentus/unittests/junit.xml' --html='../../../../reports/apps/financial/bot/fundamentus/unittests/html/index.html'"
+addopts = "--cov --cov-report html:'../../../../coverage/apps/financial/bot/fundamentus/html' --cov-report xml:'../../../../coverage/apps/financial/bot/fundamentus/coverage.xml' --junitxml='../../../../reports/apps/financial/bot/fundamentus/unittests/junit.xml' --html='../../../../reports/apps/financial/bot/fundamentus/unittests/html/index.html'"
 
 [tool.poetry]
 name = "bot-fundamentus"
