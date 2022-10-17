@@ -4,7 +4,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Document } from 'mongoose';
 
 @Schema({
-  timestamps: true
+  timestamps: true,
 })
 export class Article {
   @Prop() text: string;

@@ -6,7 +6,9 @@ import { CreateArticleDto } from '@data-platform/api/data-access-dtos';
 
 @Injectable()
 export class ArticleService {
-  constructor(@InjectModel(Article.name) private articleModel: Model<ArticleDocument>) {}
+  constructor(
+    @InjectModel(Article.name) private articleModel: Model<ArticleDocument>
+  ) {}
 
   async getAll() {
     return await this.articleModel.find().exec();

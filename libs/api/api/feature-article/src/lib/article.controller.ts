@@ -1,7 +1,10 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiTags, ApiOkResponse, ApiCreatedResponse } from '@nestjs/swagger';
 
-import { Article, ArticleService } from '@data-platform/api/data-access-article';
+import {
+  Article,
+  ArticleService,
+} from '@data-platform/api/data-access-article';
 import { CreateArticleDto } from '@data-platform/api/data-access-dtos';
 
 @Controller('articles')
@@ -12,7 +15,7 @@ export class ArticleController {
   @Get()
   @ApiOkResponse({
     type: Article,
-    isArray: true
+    isArray: true,
   })
   async getAllArticles() {
     return await this.articleService.getAll();
@@ -20,7 +23,7 @@ export class ArticleController {
 
   @Post()
   @ApiCreatedResponse({
-    type: Article
+    type: Article,
   })
   async createArticle(@Body() article: CreateArticleDto) {
     return await this.articleService.createArticle(article);

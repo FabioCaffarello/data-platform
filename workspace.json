@@ -11,9 +11,8 @@
     "api-feature-article": "libs/api/api/feature-article",
     "api-feature-config": "libs/api/api/feature-config",
     "api-utils-config": "libs/api/api/utils-config",
-    "article-data-access-api": "libs/api/articles/data-access-api",
+    "article-data-access-api": "libs/api/article/data-access-api",
     "shared-core": "libs/shared/core",
     "shared-development": "libs/shared/development"
-
   }
 }

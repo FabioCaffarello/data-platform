@@ -1,5 +1,3 @@
-
-
 # data-platform
 
 Nx Monorepo for data platform solutions.

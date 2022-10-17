@@ -2,5 +2,7 @@
   "name": "@data-platform/post-e2e",
   "version": "0.0.1",
   "type": "commonjs",
-  "implicitDependencies": ["post"]
+  "implicitDependencies": [
+    "post"
+  ]
 }

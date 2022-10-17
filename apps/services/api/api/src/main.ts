@@ -6,28 +6,32 @@
 import { INestApplication, Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { AppConfiguration, appConfiguration } from '@data-platform/api/utils-config';
+import {
+  AppConfiguration,
+  appConfiguration,
+} from '@data-platform/api/utils-config';
 
 import { AppModule } from './app/app.module';
 
 function configureSwagger(
   appConfig: AppConfiguration,
   app: INestApplication,
-  globalPrefix: string) {
-    const swaggerDocOptions = new DocumentBuilder()
-      .setTitle('Nx Article API')
-      .setDescription('Nx Article API Docs')
-      .setVersion('1.0.0')
-      .addServer(appConfig.domain, 'development')
-      .build();
+  globalPrefix: string
+) {
+  const swaggerDocOptions = new DocumentBuilder()
+    .setTitle('Nx Article API')
+    .setDescription('Nx Article API Docs')
+    .setVersion('1.0.0')
+    .addServer(appConfig.domain, 'development')
+    .build();
 
-    const swaggerDoc = SwaggerModule.createDocument(app, swaggerDocOptions);
-    const swaggerUiPath = `/${globalPrefix}/docs`;
-    SwaggerModule.setup(swaggerUiPath, app, swaggerDoc);
-    Logger.log(
-      `Swagger Docs enabled: ${appConfig.domain}${swaggerUiPath}`,
-      'NestApplication'
-    );
+  const swaggerDoc = SwaggerModule.createDocument(app, swaggerDocOptions);
+  const swaggerUiPath = `/${globalPrefix}/docs`;
+  SwaggerModule.setup(swaggerUiPath, app, swaggerDoc);
+  Logger.log(
+    `Swagger Docs enabled: ${appConfig.domain}${swaggerUiPath}`,
+    'NestApplication'
+  );
 }
 
 async function bootstrap() {
