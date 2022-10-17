@@ -32,6 +32,9 @@
       ],
       "@data-platform/article/data-access-api": [
         "libs/api/article/data-access-api/src/index.ts"
+      ],
+      "@data-platform/api/api": [
+        "apps/services/api/api/src/index.ts"
       ]
     }
   },

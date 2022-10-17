@@ -64,7 +64,7 @@
       },
       "defaultConfiguration": "development",
       "options": {
-        "proxyConfig": "apps/post/proxy.conf.json"
+        "proxyConfig": "apps/services/api/post/proxy.conf.json"
       }
     },
     "extract-i18n": {
@@ -76,22 +76,7 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/post/src/**/*.ts", "apps/post/src/**/*.html"]
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/post"],
-      "options": {
-        "jestConfig": "apps/post/jest.config.js",
-        "passWithNoTests": true
-      }
-    },
-    "typedoc": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "npx typedoc --plugin typedoc-plugin-markdown --out typedoc src/index.ts --entryDocument index.md --readme none --hideBreadcrumbs true --hideInPageTOC true",
-        "cwd": "apps/services/api/post"
+        "lintFilePatterns": ["apps/services/api/post/src/**/*.ts", "apps/post/src/**/*.html"]
       }
     }
   }
