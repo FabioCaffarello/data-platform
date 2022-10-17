@@ -2,6 +2,8 @@
 
 docs/dependency-graph/*
 */typedoc
+reports/*
+*.coverage
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

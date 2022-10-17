@@ -1,8 +1,8 @@
-"""shared_core.time tests."""
+"""core.time tests."""
 
 from unittest.mock import MagicMock, patch
 
-from shared_core.time import current_milli_time
+from core.time import current_milli_time
 
 
 @patch('time.time')
