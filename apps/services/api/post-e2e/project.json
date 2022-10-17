@@ -21,6 +21,13 @@
       "options": {
         "lintFilePatterns": ["apps/services/api/post-e2e/**/*.{js,ts}"]
       }
+    },
+    "typedoc": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "npx typedoc --plugin typedoc-plugin-markdown --out typedoc src/index.ts --entryDocument index.md --readme none --hideBreadcrumbs true --hideInPageTOC true",
+        "cwd": "apps/services/api/post-e2e"
+      }
     }
   }
 }
