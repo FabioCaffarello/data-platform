@@ -22,5 +22,8 @@
         "lintFilePatterns": ["apps/services/api/post-e2e/**/*.{js,ts}"]
       }
     }
-  }
+  },
+  "implicitDependencies": [
+    "post"
+  ]
 }
