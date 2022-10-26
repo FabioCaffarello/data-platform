@@ -1,0 +1,28 @@
+{
+  "sourceRoot": "libs/api/api/data-access-article/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/api/api/data-access-article/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/api/api/data-access-article"],
+      "options": {
+        "jestConfig": "libs/api/api/data-access-article/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "typedoc": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "npx typedoc --plugin typedoc-plugin-markdown --out typedoc src/index.ts --entryDocument index.md --readme none --hideBreadcrumbs true --hideInPageTOC true",
+        "cwd": "libs/api/api/data-access-article"
+      }
+    }
+  }
+}

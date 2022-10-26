@@ -8,9 +8,9 @@ import { ArticleService } from './article.service';
     MongooseModule.forFeature([
       {
         name: Article.name,
-        schema: ArticleSchema
-      }
-    ])
+        schema: ArticleSchema,
+      },
+    ]),
   ],
   providers: [ArticleService],
   exports: [ArticleService],

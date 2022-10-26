@@ -1,0 +1,88 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/bot/proxy/proxy-loader/proxy",
+  "targets": {
+    "docs": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "pydoc-markdown -p proxy --render-toc > docs/source/api.md",
+        "cwd": "libs/bot/proxy/proxy-loader"
+      }
+    },
+    "lock": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "poetry lock --no-update",
+        "cwd": "libs/bot/proxy/proxy-loader"
+      }
+    },
+    "add": {
+      "executor": "@nxlv/python:add",
+      "options": {}
+    },
+    "update": {
+      "executor": "@nxlv/python:update",
+      "options": {}
+    },
+    "remove": {
+      "executor": "@nxlv/python:remove",
+      "options": {}
+    },
+    "build": {
+      "executor": "@nxlv/python:build",
+      "outputs": ["libs/bot/proxy/proxy-loader/dist"],
+      "options": {
+        "outputPath": "libs/bot/proxy/proxy-loader/dist",
+        "publish": true
+      }
+    },
+    "install": {
+      "executor": "@nxlv/python:install",
+      "options": {
+        "silent": false,
+        "args": "",
+        "cacheDir": ".cache/pypoetry",
+        "verbose": false,
+        "debug": false
+      }
+    },
+    "lint": {
+      "executor": "@nxlv/python:flake8",
+      "outputs": ["reports/libs/bot/proxy/proxy-loader/pylint.txt"],
+      "options": {
+        "outputFile": "reports/libs/bot/proxy/proxy-loader/pylint.txt"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [
+        "reports/libs/bot/proxy/proxy-loader/unittests",
+        "coverage/libs/bot/proxy/proxy-loader"
+      ],
+      "options": {
+        "command": "poetry run pytest tests/",
+        "cwd": "libs/bot/proxy/proxy-loader"
+      }
+    },
+    "tox": {
+      "executor": "@nxlv/python:tox",
+      "outputs": [
+        "reports/libs/bot/proxy/proxy-loader/unittests",
+        "coverage/libs/bot/proxy/proxy-loader"
+      ],
+      "options": {
+        "silent": false,
+        "args": ""
+      }
+    },
+    "docker": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "load": true,
+        "tags": ["proxy-loader:latest"],
+      }
+    }
+  },
+  "tags": ["proxy-loader-1.0.0"]
+}

@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@data-platform/api/api": ["apps/services/api/api/src/index.ts"],
       "@data-platform/api/data-access-article": [
         "libs/api/api/data-access-article/src/index.ts"
       ],

@@ -57,7 +57,7 @@ python-versions = ">=3.7"
 name = "async-timeout"
 version = "4.0.2"
 description = "Timeout context manager for asyncio programs"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -163,14 +163,14 @@ url = "apps/financial/bot/fundamentus"
 
 [[package]]
 name = "boto3"
-version = "1.24.91"
+version = "1.24.92"
 description = "The AWS SDK for Python"
 category = "dev"
 optional = false
 python-versions = ">= 3.7"
 
 [package.dependencies]
-botocore = ">=1.27.91,<1.28.0"
+botocore = ">=1.27.92,<1.28.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.6.0,<0.7.0"
 
@@ -179,7 +179,7 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.27.91"
+version = "1.27.92"
 description = "Low-level, data-driven core of boto 3."
 category = "dev"
 optional = false
@@ -254,6 +254,19 @@ tomli = {version = "*", optional = true, markers = "python_full_version <= \"3.1
 toml = ["tomli"]
 
 [[package]]
+name = "crawler-base"
+version = "1.0.0"
+description = "Base scrapy crawler"
+category = "main"
+optional = false
+  python-versions = ">=3.8,<3.10"
+develop = true
+
+[package.source]
+type = "directory"
+url = "libs/bot/core/crawler-base"
+
+[[package]]
 name = "databind"
 version = "1.5.3"
 description = "Databind is a library inspired by jackson-databind to de-/serialize Python dataclasses. The `databind` package will install the full suite of databind packages. Compatible with Python 3.7 and newer."
@@ -303,7 +316,7 @@ python-versions = ">=3.5"
 name = "deprecated"
 version = "1.2.13"
 description = "Python @deprecated decorator to deprecate old python classes, functions or methods."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
@@ -363,6 +376,22 @@ description = "An implementation of lxml.xmlfile for the standard library"
 category = "dev"
 optional = false
 python-versions = ">=3.6"
+
+[[package]]
+name = "feature-config"
+version = "1.0.0"
+description = "Python features configs"
+category = "main"
+optional = false
+  python-versions = ">=3.8,<3.10"
+develop = true
+
+[package.dependencies]
+utils-config = {path = "../utils-configs", develop = true}
+
+[package.source]
+type = "directory"
+url = "libs/shared/feature-config"
 
 [[package]]
 name = "filelock"
@@ -894,7 +923,7 @@ async = ["aiohttp (>=3,<4)"]
 name = "packaging"
 version = "21.3"
 description = "Core utilities for Python packages"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -1004,6 +1033,22 @@ python-utils = ">=3.0.0"
 [package.extras]
 docs = ["sphinx (>=1.8.5)"]
 tests = ["flake8 (>=3.7.7)", "pytest (>=4.6.9)", "pytest-cov (>=2.6.1)", "pytest-mypy", "freezegun (>=0.3.11)", "sphinx (>=1.8.5)"]
+
+[[package]]
+name = "proxy-loader"
+version = "1.0.0"
+description = "Proxy Loader."
+category = "main"
+optional = false
+  python-versions = ">=3.8,<3.10"
+develop = true
+
+[package.dependencies]
+feature-config = {path = "../../../shared/feature-config", develop = true}
+
+[package.source]
+type = "directory"
+url = "libs/bot/proxy/proxy-loader"
 
 [[package]]
 name = "py"
@@ -1123,7 +1168,7 @@ ed25519 = ["PyNaCl (>=1.4.0)"]
 name = "pyparsing"
 version = "3.0.9"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6.8"
 
@@ -1285,6 +1330,23 @@ python-versions = ">=3.6"
 
 [package.dependencies]
 pyyaml = "*"
+
+[[package]]
+name = "redis"
+version = "4.3.4"
+description = "Python client for Redis database and key-value store"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+async-timeout = ">=4.0.2"
+deprecated = ">=1.2.3"
+packaging = ">=20.4"
+
+[package.extras]
+hiredis = ["hiredis (>=1.0.0)"]
+ocsp = ["cryptography (>=36.0.1)", "pyopenssl (==20.0.1)", "requests (>=2.26.0)"]
 
 [[package]]
 name = "redshift-connector"
@@ -1524,6 +1586,22 @@ secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "cer
 socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
+name = "utils-config"
+version = "1.0.0"
+description = "Python utils configs"
+category = "main"
+optional = false
+  python-versions = ">=3.8,<3.10"
+develop = true
+
+[package.dependencies]
+redis = "^4.3.4"
+
+[package.source]
+type = "directory"
+url = "libs/shared/utils-configs"
+
+[[package]]
 name = "virtualenv"
 version = "20.16.5"
 description = "Virtual Python Environment builder"
@@ -1555,7 +1633,7 @@ watchmedo = ["PyYAML (>=3.10)"]
 name = "wrapt"
 version = "1.14.1"
 description = "Module for decorators, wrappers and monkey patching."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 
@@ -1594,7 +1672,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
   python-versions = ">=3.8,<3.10"
-content-hash = "2b52fc879d062cac4362ac428d7da3de7ee5031a8f5acb41b19611a73fa5434d"
+content-hash = "4f304703167097114157c494e54795612d628bc6dd7db1daf73e46b6fbbcfc3c"
 
 [metadata.files]
 aenum = [
@@ -1717,12 +1795,12 @@ beautifulsoup4 = [
 ]
 bot-fundamentus = []
 boto3 = [
-    {file = "boto3-1.24.91-py3-none-any.whl", hash = "sha256:b295640bc1be637f8f7c8c8fca70781048d6397196109e59f20541824fab4b67"},
-    {file = "boto3-1.24.91.tar.gz", hash = "sha256:3225366014949039e6687387242e73f237f0fee0a9b7c20461894f1ee40686b8"},
+    {file = "boto3-1.24.92-py3-none-any.whl", hash = "sha256:3c6cc4e9e38cf4523267f89eb90c0b6084fa415cb4f44e3bf0cad6199340cc92"},
+    {file = "boto3-1.24.92.tar.gz", hash = "sha256:d28bcb98aee4d333b163c55b98341627d933dbf088832f7fc050893617be7dac"},
 ]
 botocore = [
-    {file = "botocore-1.27.91-py3-none-any.whl", hash = "sha256:1d6e97bd8653f732c7078b34aa2bb438e750898957e5a0a74b6c72918bc1d0f7"},
-    {file = "botocore-1.27.91.tar.gz", hash = "sha256:c8fac203a391cc2e4b682877bfce70e723e33c529b35b399a1d574605fbeb1af"},
+    {file = "botocore-1.27.92-py3-none-any.whl", hash = "sha256:b49c34b80c782625905be75e669da4b42a99f074e0aa3007e15ccc6955682a07"},
+    {file = "botocore-1.27.92.tar.gz", hash = "sha256:70cf2cb04968794ed4688cc3b07874f6f4c932e325611be4e693a995fdb481be"},
 ]
 certifi = [
     {file = "certifi-2022.9.24-py3-none-any.whl", hash = "sha256:90c1a32f1d68f940488354e36370f6cca89f0f106db09518524c88d6ed83f382"},
@@ -1796,6 +1874,7 @@ coverage = [
     {file = "coverage-6.5.0-pp36.pp37.pp38-none-any.whl", hash = "sha256:1431986dac3923c5945271f169f59c45b8802a114c8f548d611f2015133df77a"},
     {file = "coverage-6.5.0.tar.gz", hash = "sha256:f642e90754ee3e06b0e7e51bce3379590e76b7f76b708e1a71ff043f87025c84"},
 ]
+crawler-base = []
 databind = [
     {file = "databind-1.5.3-py3-none-any.whl", hash = "sha256:43d76e3b931ed9d986b5e35df60e37ccb0bcb2b3b57d6f44cce085c48abe7016"},
     {file = "databind-1.5.3.tar.gz", hash = "sha256:a1986c1a2054d28d064cf7900c2d3f03850ace124331fa026e6049f390742122"},
@@ -1835,6 +1914,7 @@ et-xmlfile = [
     {file = "et_xmlfile-1.1.0-py3-none-any.whl", hash = "sha256:a2ba85d1d6a74ef63837eed693bcb89c3f752169b0e3e7ae5b16ca5e1b3deada"},
     {file = "et_xmlfile-1.1.0.tar.gz", hash = "sha256:8eb9e2bc2f8c97e37a2dc85a09ecdcdec9d8a396530a6d5a33b30b9a92da0c5c"},
 ]
+feature-config = []
 filelock = [
     {file = "filelock-3.8.0-py3-none-any.whl", hash = "sha256:617eb4e5eedc82fc5f47b6d61e4d11cb837c56cb4544e39081099fa17ad109d4"},
     {file = "filelock-3.8.0.tar.gz", hash = "sha256:55447caa666f2198c5b6b13a26d2084d26fa5b115c00d065664b2124680c4edc"},
@@ -2317,6 +2397,7 @@ progressbar2 = [
     {file = "progressbar2-4.0.0-py2.py3-none-any.whl", hash = "sha256:2562ba3e554433f08e81fb7b786208b19de135f3ca1c5da1787d9b05558e6247"},
     {file = "progressbar2-4.0.0.tar.gz", hash = "sha256:14d3165a1781d053ffaa117daf27cc706128d2ec1d2977fdb05b6bb079888013"},
 ]
+proxy-loader = []
 py = [
     {file = "py-1.11.0-py2.py3-none-any.whl", hash = "sha256:607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378"},
     {file = "py-1.11.0.tar.gz", hash = "sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"},
@@ -2467,6 +2548,10 @@ pyyaml-env-tag = [
     {file = "pyyaml_env_tag-0.1-py3-none-any.whl", hash = "sha256:af31106dec8a4d68c60207c1886031cbf839b68aa7abccdb19868200532c2069"},
     {file = "pyyaml_env_tag-0.1.tar.gz", hash = "sha256:70092675bda14fdec33b31ba77e7543de9ddc88f2e5b99160396572d11525bdb"},
 ]
+redis = [
+    {file = "redis-4.3.4-py3-none-any.whl", hash = "sha256:a52d5694c9eb4292770084fa8c863f79367ca19884b329ab574d5cb2036b3e54"},
+    {file = "redis-4.3.4.tar.gz", hash = "sha256:ddf27071df4adf3821c4f2ca59d67525c3a82e5f268bed97b813cb4fabf87880"},
+]
 redshift-connector = [
     {file = "redshift_connector-2.0.909-py3-none-any.whl", hash = "sha256:9fb0e25c2af961d268189c0718c4f48e842cf09070e05ba7343b9a8d491df443"},
 ]
@@ -2532,6 +2617,7 @@ urllib3 = [
     {file = "urllib3-1.26.12-py2.py3-none-any.whl", hash = "sha256:b930dd878d5a8afb066a637fbb35144fe7901e3b209d1cd4f524bd0e9deee997"},
     {file = "urllib3-1.26.12.tar.gz", hash = "sha256:3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e"},
 ]
+utils-config = []
 virtualenv = [
     {file = "virtualenv-20.16.5-py3-none-any.whl", hash = "sha256:d07dfc5df5e4e0dbc92862350ad87a36ed505b978f6c39609dc489eadd5b0d27"},
     {file = "virtualenv-20.16.5.tar.gz", hash = "sha256:227ea1b9994fdc5ea31977ba3383ef296d7472ea85be9d6732e42a91c04e80da"},

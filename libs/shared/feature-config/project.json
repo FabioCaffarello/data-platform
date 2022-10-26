@@ -1,0 +1,81 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/shared/feature-config/feature",
+  "targets": {
+    "docs": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "pydoc-markdown -p feature --render-toc > docs/source/api.md",
+        "cwd": "libs/shared/feature-config"
+      }
+    },
+    "lock": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "poetry lock --no-update",
+        "cwd": "libs/shared/feature-config"
+      }
+    },
+    "add": {
+      "executor": "@nxlv/python:add",
+      "options": {}
+    },
+    "update": {
+      "executor": "@nxlv/python:update",
+      "options": {}
+    },
+    "remove": {
+      "executor": "@nxlv/python:remove",
+      "options": {}
+    },
+    "build": {
+      "executor": "@nxlv/python:build",
+      "outputs": ["libs/shared/feature-config/dist"],
+      "options": {
+        "outputPath": "libs/shared/feature-config/dist",
+        "publish": true
+      }
+    },
+    "install": {
+      "executor": "@nxlv/python:install",
+      "options": {
+        "silent": false,
+        "args": "",
+        "cacheDir": ".cache/pypoetry",
+        "verbose": false,
+        "debug": false
+      }
+    },
+    "lint": {
+      "executor": "@nxlv/python:flake8",
+      "outputs": ["reports/libs/shared/feature-config/pylint.txt"],
+      "options": {
+        "outputFile": "reports/libs/shared/feature-config/pylint.txt"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [
+        "reports/libs/shared/feature-config/unittests",
+        "coverage/libs/shared/feature-config"
+      ],
+      "options": {
+        "command": "poetry run pytest tests/",
+        "cwd": "libs/shared/feature-config"
+      }
+    },
+    "tox": {
+      "executor": "@nxlv/python:tox",
+      "outputs": [
+        "reports/libs/shared/feature-config/unittests",
+        "coverage/libs/shared/feature-config"
+      ],
+      "options": {
+        "silent": false,
+        "args": ""
+      }
+    }
+  },
+  "tags": ["feature-python-config-1.0.0"]
+}

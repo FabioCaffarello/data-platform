@@ -3,12 +3,8 @@ import { ApiDataAccessArticleModule } from '@data-platform/api/data-access-artic
 import { ArticleController } from './article.controller';
 
 @Module({
-  controllers: [
-    ArticleController
-  ],
-  imports: [
-    ApiDataAccessArticleModule
-  ],
+  controllers: [ArticleController],
+  imports: [ApiDataAccessArticleModule],
   providers: [],
   exports: [],
 })
