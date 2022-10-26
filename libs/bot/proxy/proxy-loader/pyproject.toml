@@ -1,0 +1,45 @@
+[tool.coverage.run]
+branch = true
+source = [ "proxy" ]
+
+[tool.coverage.report]
+exclude_lines = [ "if TYPE_CHECKING:" ]
+show_missing = true
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-fail-under=100 --cov-report html:'../../../../coverage/libs/bot/proxy/proxy-loader/html' --cov-report xml:'../../../../coverage/libs/bot/proxy/proxy-loader/coverage.xml' --junitxml='../../../../reports/libs/bot/proxy/proxy-loader/unittests/junit.xml' --html='../../../../reports/libs/bot/proxy/proxy-loader/unittests/html/index.html'"
+
+[tool.poetry]
+name = "proxy-loader"
+version = "1.0.0"
+description = "Proxy Loader."
+authors = [ ]
+license = "Proprietary"
+readme = "README.md"
+
+  [[tool.poetry.packages]]
+  include = "proxy"
+
+  [tool.poetry.dependencies]
+  python = ">=3.8,<3.10"
+  requests = "^2.28.1"
+  beautifulsoup4 = "^4.11.1"
+
+    [tool.poetry.dependencies.feature-config]
+    path = "../../../shared/feature-config"
+    develop = true
+
+[tool.poetry.group.dev.dependencies.shared-core]
+path = "../../../shared/core"
+develop = true
+
+[tool.poetry.group.dev.dependencies.shared-development]
+path = "../../../shared/development"
+develop = true
+
+[tool.poetry.scripts]
+proxy = "proxy.proxy_free:main"
+
+[build-system]
+requires = [ "poetry-core==1.1.0" ]
+build-backend = "poetry.core.masonry.api"

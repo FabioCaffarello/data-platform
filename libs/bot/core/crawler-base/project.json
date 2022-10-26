@@ -1,0 +1,81 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/bot/core/crawler-base/crawler",
+  "targets": {
+    "docs": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "pydoc-markdown -p crawler --render-toc > docs/source/api.md",
+        "cwd": "libs/bot/core/crawler-base"
+      }
+    },
+    "lock": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "poetry lock --no-update",
+        "cwd": "libs/bot/core/crawler-base"
+      }
+    },
+    "add": {
+      "executor": "@nxlv/python:add",
+      "options": {}
+    },
+    "update": {
+      "executor": "@nxlv/python:update",
+      "options": {}
+    },
+    "remove": {
+      "executor": "@nxlv/python:remove",
+      "options": {}
+    },
+    "build": {
+      "executor": "@nxlv/python:build",
+      "outputs": ["libs/bot/core/crawler-base/dist"],
+      "options": {
+        "outputPath": "libs/bot/core/crawler-base/dist",
+        "publish": true
+      }
+    },
+    "install": {
+      "executor": "@nxlv/python:install",
+      "options": {
+        "silent": false,
+        "args": "",
+        "cacheDir": ".cache/pypoetry",
+        "verbose": false,
+        "debug": false
+      }
+    },
+    "lint": {
+      "executor": "@nxlv/python:flake8",
+      "outputs": ["reports/libs/bot/core/crawler-base/pylint.txt"],
+      "options": {
+        "outputFile": "reports/libs/bot/core/crawler-base/pylint.txt"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [
+        "reports/libs/bot/core/crawler-base/unittests",
+        "coverage/libs/bot/core/crawler-base"
+      ],
+      "options": {
+        "command": "poetry run pytest tests/",
+        "cwd": "libs/bot/core/crawler-base"
+      }
+    },
+    "tox": {
+      "executor": "@nxlv/python:tox",
+      "outputs": [
+        "reports/libs/bot/core/crawler-base/unittests",
+        "coverage/libs/bot/core/crawler-base"
+      ],
+      "options": {
+        "silent": false,
+        "args": ""
+      }
+    }
+  },
+  "tags": ["crawler-1.0.0"]
+}

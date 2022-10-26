@@ -1,0 +1,40 @@
+[tool.coverage.run]
+branch = true
+source = [ "feature" ]
+
+[tool.coverage.report]
+exclude_lines = [ "if TYPE_CHECKING:" ]
+show_missing = true
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-fail-under=100 --cov-report html:'../../../coverage/libs/shared/feature-config/html' --cov-report xml:'../../../coverage/libs/shared/feature-config/coverage.xml' --junitxml='../../../reports/libs/shared/feature-config/unittests/junit.xml' --html='../../../reports/libs/shared/feature-config/unittests/html/index.html'"
+
+[tool.poetry]
+name = "feature-config"
+version = "1.0.0"
+description = "Python features configs"
+authors = [ ]
+license = "Proprietary"
+readme = "README.md"
+
+  [[tool.poetry.packages]]
+  include = "feature"
+
+  [tool.poetry.dependencies]
+  python = ">=3.8,<3.10"
+
+    [tool.poetry.dependencies.utils-config]
+    path = "../utils-configs"
+    develop = true
+
+[tool.poetry.group.dev.dependencies.shared-core]
+path = "../core"
+develop = true
+
+[tool.poetry.group.dev.dependencies.shared-development]
+path = "../development"
+develop = true
+
+[build-system]
+requires = [ "poetry-core==1.1.0" ]
+build-backend = "poetry.core.masonry.api"

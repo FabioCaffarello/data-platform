@@ -1,14 +1,5 @@
 version: '3'
 services:
-  mongo:
-    image: mongo
-    ports:
-      - '27017:27017'
-    volumes:
-      - mongo-data:/data/db
-    networks:
-      - dataplatform-network
-
   redis:
     container_name: redis
     image: redis/redis-stack-server:latest
@@ -20,7 +11,7 @@ services:
 
   proxy:
       container_name: proxy
-      build: ./proxy
+      build: .
       ports:
         - 8000:8000
       depends_on:
@@ -29,9 +20,6 @@ services:
         - redis
       networks:
         - dataplatform-network
-volumes:
-  mongo-data:
-    driver: local
 
 
 networks:

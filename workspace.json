@@ -3,16 +3,20 @@
   "version": 2,
   "projects": {
     "api": "apps/services/api/api",
-    "post": "apps/services/api/post",
-    "post-e2e": "apps/services/api/post-e2e",
-    "financial-bot-fundamentus": "apps/financial/bot/fundamentus",
     "api-data-access-article": "libs/api/api/data-access-article",
     "api-data-access-dtos": "libs/api/api/data-access-dtos",
     "api-feature-article": "libs/api/api/feature-article",
     "api-feature-config": "libs/api/api/feature-config",
     "api-utils-config": "libs/api/api/utils-config",
     "article-data-access-api": "libs/api/article/data-access-api",
+    "bot-core-crawler-base": "libs/bot/core/crawler-base",
+    "bot-proxy-proxy-loader": "libs/bot/proxy/proxy-loader",
+    "financial-bot-fundamentus": "apps/financial/bot/fundamentus",
+    "post": "apps/services/api/post",
+    "post-e2e": "apps/services/api/post-e2e",
     "shared-core": "libs/shared/core",
-    "shared-development": "libs/shared/development"
+    "shared-development": "libs/shared/development",
+    "shared-feature-config": "libs/shared/feature-config",
+    "shared-utils-configs": "libs/shared/utils-configs"
   }
 }
